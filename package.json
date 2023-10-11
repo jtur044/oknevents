@@ -1,0 +1,19 @@
+{
+  "name": "oknevents",
+  "version": "1.0.0",
+  "description": "extract events from gaze.csv  ",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "okn",
+    "event",
+    "experiment"
+  ],
+  "bin": {
+    "oknevents": "./cli.js"
+  },
+  "author": "Jason Turuwhenua",
+  "license": "ISC"
+}
