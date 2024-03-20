@@ -4,8 +4,7 @@
 
 Example :
 
-  
-  oknevents 
+  oknevents -i <gaze.csv> > events.json
           
 
 */
@@ -33,11 +32,11 @@ let fields = [ "record_timestamp", "sensor_timestamp" ];
 const results = [];
 
 let line = 0;
+let output = [];
 
 fs.createReadStream(options.input)
   .pipe(csv())
   .on('data', (data) => {
-
 
         line++;
 
@@ -58,7 +57,7 @@ fs.createReadStream(options.input)
                   });
 
                   // send it out!
-                  console.log (event);
+                  output.push (event);
 
 
                 } catch (err) {
@@ -77,6 +76,8 @@ fs.createReadStream(options.input)
     )
   .on('end', () => {
 
+      // write it all out 
+      console.log (JSON.stringify (output));
 
       // loaded 
       console.error ('done.');
