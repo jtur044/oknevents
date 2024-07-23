@@ -13,15 +13,16 @@ Example :
 /* sweep */
 
 const fs = require('fs');
-const program  = require ("commander");
+const { program }  = require ("commander");
 const csv = require('csv-parser')
 
 /* program */
 
-
 program
-  .option('-i, --input <name>', 'get a view', __dirname + '/example/gaze.csv')
+  .option('-i, --input <name>', 'get a view', __dirname + '/example/gaze.csv');
+
 program.parse(process.argv);
+
 const options = program.opts();
 
 
